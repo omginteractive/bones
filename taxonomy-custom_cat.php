@@ -48,7 +48,7 @@
 
 							<?php endwhile; ?>
 
-									<?php bones_page_navi(); ?>
+									<?php bare_bones_page_navi(); ?>
 
 							<?php else : ?>
 
