@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-			<div id="content">
+			<section id="content" class="row">
 
 				<div id="inner-content" class="wrap cf">
 
@@ -10,13 +10,13 @@
 
 							<header class="article-header">
 
-								<h1><?php _e( 'Epic 404 - Article Not Found', 'bonestheme' ); ?></h1>
+								<h1><?php echo 'Epic 404 - Article Not Found'; ?></h1>
 
 							</header>
 
 							<section class="entry-content">
 
-								<p><?php _e( 'The article you were looking for was not found, but maybe try looking again!', 'bonestheme' ); ?></p>
+								<p><?php echo 'The article you were looking for was not found, but maybe try looking again!'; ?></p>
 
 							</section>
 
@@ -28,7 +28,7 @@
 
 							<footer class="article-footer">
 
-									<p><?php _e( 'This is the 404.php template.', 'bonestheme' ); ?></p>
+									<p><?php echo 'This is the 404.php template.'; ?></p>
 
 							</footer>
 
@@ -38,6 +38,6 @@
 
 				</div>
 
-			</div>
+			</section>
 
 <?php get_footer(); ?>

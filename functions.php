@@ -1,18 +1,11 @@
 <?php
 /*
-Author: Eddie Machado
-URL: http://themble.com/bones/
-
-This is where you can drop your custom functions or
-just edit things like thumbnail sizes, header images,
-sidebars, comments, etc.
+Author: oneRhino
+URL: 
 */
 
-// LOAD BONES CORE (if you remove this, the theme will break)
-require_once( 'library/bones.php' );
-
-// CUSTOMIZE THE WORDPRESS ADMIN (off by default)
-// require_once( 'library/admin.php' );
+// LOAD BARE BONES CORE
+require_once( 'library/bare_bones.php' );
 
 /*********************
 LAUNCH BONES
@@ -23,9 +16,6 @@ function bare_bones_ahoy() {
 
   //Allow editor style.
   add_editor_style( get_stylesheet_directory_uri() . '/library/css/editor-style.css' );
-
-  // let's get language support going, if you need it
-  load_theme_textdomain( 'bonestheme', get_template_directory() . '/library/translation' );
 
   // USE THIS TEMPLATE TO CREATE CUSTOM POST TYPES EASILY
   require_once( 'library/custom-post-type.php' );
@@ -156,8 +146,8 @@ add_action( 'customize_register', 'bare_bones_theme_customizer' );
 function bare_bones_register_sidebars() {
 	register_sidebar(array(
 		'id' => 'sidebar1',
-		'name' => __( 'Sidebar 1', 'bonestheme' ),
-		'description' => __( 'The first (primary) sidebar.', 'bonestheme' ),
+		'name' => 'Sidebar 1',
+		'description' => 'The first (primary) sidebar.',
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
@@ -174,8 +164,8 @@ function bare_bones_register_sidebars() {
 
 	register_sidebar(array(
 		'id' => 'sidebar2',
-		'name' => __( 'Sidebar 2', 'bonestheme' ),
-		'description' => __( 'The second (secondary) sidebar.', 'bonestheme' ),
+		'name' => 'Sidebar 2',
+		'description' => 'The second (secondary) sidebar.',
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
@@ -212,13 +202,13 @@ function bare_bones_comments( $comment, $args, $depth ) {
         ?>
         <img data-gravatar="http://www.gravatar.com/avatar/<?php echo md5( $bgauthemail ); ?>?s=40" class="load-gravatar avatar avatar-48 photo" height="40" width="40" src="<?php echo get_template_directory_uri(); ?>/library/images/nothing.gif" />
         <?php // end custom gravatar call ?>
-        <?php printf(__( '<cite class="fn">%1$s</cite> %2$s', 'bonestheme' ), get_comment_author_link(), edit_comment_link(__( '(Edit)', 'bonestheme' ),'  ','') ) ?>
-        <time datetime="<?php echo comment_time('Y-m-j'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time(__( 'F jS, Y', 'bonestheme' )); ?> </a></time>
+        <?php printf('<cite class="fn">%1$s</cite> %2$s', get_comment_author_link(), edit_comment_link('(Edit)','  ','') ) ?>
+        <time datetime="<?php echo comment_time('Y-m-j'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time('F jS, Y'); ?> </a></time>
 
       </header>
       <?php if ($comment->comment_approved == '0') : ?>
         <div class="alert alert-info">
-          <p><?php _e( 'Your comment is awaiting moderation.', 'bonestheme' ) ?></p>
+          <p><?php 'Your comment is awaiting moderation.' ?></p>
         </div>
       <?php endif; ?>
       <section class="comment_content cf">

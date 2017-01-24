@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-			<div id="content">
+			<section id="content" class="row">
 
 				<div id="inner-content" class="wrap cf">
 
@@ -15,7 +15,7 @@
 									<h1 class="page-title" itemprop="headline"><?php the_title(); ?></h1>
 
 									<p class="byline vcard">
-										<?php printf( __( 'Posted', 'bonestheme').' <time class="updated" datetime="%1$s" itemprop="datePublished">%2$s</time> '.__( 'by',  'bonestheme').' <span class="author">%3$s</span>', get_the_time('Y-m-j'), get_the_time(get_option('date_format')), get_the_author_link( get_the_author_meta( 'ID' ) )); ?>
+										<?php printf( 'Posted'.' <time class="updated" datetime="%1$s" itemprop="datePublished">%2$s</time> '.'by'.' <span class="author">%3$s</span>', get_the_time('Y-m-j'), get_the_time(get_option('date_format')), get_the_author_link( get_the_author_meta( 'ID' ) )); ?>
 									</p>
 
 								</header> <?php // end article header ?>
@@ -38,7 +38,7 @@
 										 *
 										*/
 										wp_link_pages( array(
-											'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'bonestheme' ) . '</span>',
+											'before'      => '<div class="page-links"><span class="page-links-title">' . 'Pages:' . '</span>',
 											'after'       => '</div>',
 											'link_before' => '<span>',
 											'link_after'  => '</span>',
@@ -62,6 +62,6 @@
 
 				</div>
 
-			</div>
+			</section>
 
 <?php get_footer(); ?>

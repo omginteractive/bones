@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-			<div id="content">
+			<section id="content" class="row">
 
 				<div id="inner-content" class="wrap cf">
 
@@ -31,13 +31,13 @@
 
 							<article id="post-not-found" class="hentry cf">
 									<header class="article-header">
-										<h1><?php _e( 'Oops, Post Not Found!', 'bonestheme' ); ?></h1>
+										<h1><?php echo 'Oops, Post Not Found!'; ?></h1>
 									</header>
 									<section class="entry-content">
-										<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bonestheme' ); ?></p>
+										<p><?php echo 'Uh Oh. Something is missing. Try double checking things.'; ?></p>
 									</section>
 									<footer class="article-footer">
-											<p><?php _e( 'This is the error message in the single.php template.', 'bonestheme' ); ?></p>
+											<p><?php echo 'This is the error message in the single.php template.'; ?></p>
 									</footer>
 							</article>
 
@@ -49,6 +49,6 @@
 
 				</div>
 
-			</div>
+			</section>
 
 <?php get_footer(); ?>
