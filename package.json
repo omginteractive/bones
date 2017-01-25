@@ -1,0 +1,23 @@
+{
+  "name": "omg-bare-bones",
+  "version": "1.0.0",
+  "description": "Wordpress Theme based fon Bones Boilerplate",
+  "private": true,
+  "author": "oneRhino",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "bugs": {
+    "url": "https://github.com/omginteractive/bones/issues"
+  },
+  "scripts": {
+    "build": ""
+  },
+  "homepage": "https://github.com/omginteractive/bones#readme",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-autoprefixer": "^3.0.4",
+    "grunt-cli": "^1.2.0",
+    "grunt-contrib-cssmin": "^1.0.2",
+    "grunt-contrib-less": "^1.4.0",
+    "grunt-postcss": "^0.8.0"
+  }
+}

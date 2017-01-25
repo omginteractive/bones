@@ -63,8 +63,8 @@ if ( ! isset( $content_width ) ) {
 /************* THUMBNAIL SIZE OPTIONS *************/
 
 // Thumbnail sizes
-add_image_size( 'bones-thumb-600', 600, 150, true );
-add_image_size( 'bones-thumb-300', 300, 100, true );
+add_image_size( 'bare-bones-thumb-600', 600, 150, true );
+add_image_size( 'bare-bones-thumb-300', 300, 100, true );
 
 /*
 to add more sizes, simply copy a line from above
@@ -78,9 +78,9 @@ inside the thumbnail function.
 
 For example, to call the 300 x 100 sized image,
 we would use the function:
-<?php the_post_thumbnail( 'bones-thumb-300' ); ?>
+<?php the_post_thumbnail( 'bare-bones-thumb-300' ); ?>
 for the 600 x 150 image:
-<?php the_post_thumbnail( 'bones-thumb-600' ); ?>
+<?php the_post_thumbnail( 'bare-bones-thumb-600' ); ?>
 
 You can change the names and dimensions to whatever
 you like. Enjoy!
@@ -90,8 +90,8 @@ add_filter( 'image_size_names_choose', 'bare_bones_custom_image_sizes' );
 
 function bare_bones_custom_image_sizes( $sizes ) {
     return array_merge( $sizes, array(
-        'bones-thumb-600' => __('600px by 150px'),
-        'bones-thumb-300' => __('300px by 100px'),
+        'bare-bones-thumb-600' => __('600px by 150px'),
+        'bare-bones-thumb-300' => __('300px by 100px'),
     ) );
 }
 

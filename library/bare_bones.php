@@ -125,17 +125,14 @@ function bare_bones_scripts_and_styles() {
   if (!is_admin()) {
 
 		// modernizr (without media query polyfill)
-		wp_register_script( 'bones-modernizr', get_stylesheet_directory_uri() . '/library/js/libs/modernizr.custom.min.js', array(), '2.5.3', false );
-		wp_register_script( 'bare-bones-bootstrap', get_stylesheet_directory_uri() . '/library/js/libs/bootstrap.min.js', array('jquery'), '3.3.7', false );
+		wp_register_script( 'bare-bones-modernizr', get_stylesheet_directory_uri() . '/library/js/libs/modernizr.custom.min.js', array(), '2.5.3', false );
+		wp_register_script( 'bare-bare-bones-bootstrap', get_stylesheet_directory_uri() . '/library/js/libs/bootstrap.min.js', array('jquery'), '3.3.7', false );
 
 		// register main stylesheet
-		wp_register_style( 'bones-stylesheet', get_stylesheet_directory_uri() . '/library/css/style.css', array(), '', 'all' );
-
-		// ie-only style sheet
-      wp_register_style( 'bones-ie-only', get_stylesheet_directory_uri() . '/library/css/ie.css', array(), '' );
+		wp_register_style( 'bare-bones-stylesheet', get_stylesheet_directory_uri() . '/library/css/style.min.css', array(), '', 'all' );
 
       // register bootstrap
-      wp_register_style('bare-bones-bootstrap', get_stylesheet_directory_uri() . '/library/css/bootstrap.min.css', 'all');
+      wp_register_style('bare-bare-bones-bootstrap', get_stylesheet_directory_uri() . '/library/css/bootstrap.min.css', 'all');
 
       // comment reply script for threaded comments
     if ( is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) {
@@ -143,16 +140,14 @@ function bare_bones_scripts_and_styles() {
     }
 
 		//adding scripts file in the footer
-		wp_register_script( 'bones-js', get_stylesheet_directory_uri() . '/library/js/scripts.js', array( 'jquery' ), '', true );
+		wp_register_script( 'bare-bones-js', get_stylesheet_directory_uri() . '/library/js/scripts.js', array( 'jquery' ), '', true );
 
 		// enqueue styles and scripts
-		wp_enqueue_script( 'bones-modernizr' );
-		wp_enqueue_script( 'bare-bones-bootstrap' );
-      wp_enqueue_style( 'bare-bones-bootstrap' );
-      wp_enqueue_style( 'bones-stylesheet' );
-      wp_enqueue_style( 'bones-ie-only' );
-
-		$wp_styles->add_data( 'bones-ie-only', 'conditional', 'lt IE 9' ); // add conditional wrapper around ie stylesheet
+	wp_enqueue_script( 'bare-bones-modernizr' );
+	wp_enqueue_script( 'bare-bare-bones-bootstrap' );
+	
+	wp_enqueue_style( 'bare-bare-bones-bootstrap' );
+	wp_enqueue_style( 'bare-bones-stylesheet' );
 
 		/*
 		I recommend using a plugin to call jQuery
@@ -160,7 +155,7 @@ function bare_bones_scripts_and_styles() {
 		and your site will load faster.
 		*/
 		wp_enqueue_script( 'jquery' );
-		wp_enqueue_script( 'bones-js' );
+		wp_enqueue_script( 'bare-bones-js' );
 
 	}
 }
@@ -236,7 +231,7 @@ RELATED POSTS FUNCTION
 
 // Related Posts Function (call using bare_bones_related_posts(); )
 function bare_bones_related_posts() {
-	echo '<ul id="bones-related-posts">';
+	echo '<ul id="bare-bones-related-posts">';
 	global $post;
 	$tags = wp_get_post_tags( $post->ID );
 	if($tags) {
