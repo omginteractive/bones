@@ -1,37 +1,31 @@
-# Bones
-A Lightweight Wordpress Development Theme
+# Bare Bones
+A Lightweight Wordpress Development Theme, fork from Bones Theme (http://github.com/eddiemachado/bones)
 
-Bones is designed to make the life of developers easier. It's built
+Bare Bones is designed to make the life of developers easier. It's built
 using HTML5 & has a strong semantic foundation.
-It's constantly growing so be sure to check back often if you are a
-frequent user. I'm always open to contribution. :)
 
-Designed by Eddie Machado
-http://themble.com/bones
+Designed by Online Marketing Group
+http://onlinemarketinggrp.com/
 
-License: WTFPL
-License URI: http://sam.zoy.org/wtfpl/
-Are You Serious? Yes.
-
-#### Special Thanks to:
-Paul Irish & the HTML5 Boilerplate
-Yoast for some WP functions & optimization ideas
-Andrew Rogers for code optimization
-David Dellanave for speed & code optimization
-and several other developers. :)
-
-#### Submit Bugs & or Fixes:
-https://github.com/eddiemachado/bones/issues
-
+License: Coprright OMG Interactive. All Rights Reserved
+License URI: 
 To view Release & Update Notes, read the CHANGELOG.md file in the main folder.
 
 For more news and to see why my parents constantly ask me what I'm
 doing with my life, follow me on twitter: @eddiemachado
 
-## Helpful Tools & Links
+## Install
 
-Yeoman generator to quickly install Bones Wordpress starter theme into your Wordpress theme folder
-by 0dp
-https://github.com/0dp/generator-wp-bones
-
-
+1. install node dependencies (Terminal)
+  * ```cd <path_to_the_bones_theme>```
+  * run ```npm install```
+2. make sure ```grunt-cli``` is installed
+  * if not install it like this: ```npm update -g npm && npm install -g grunt-cli```
+  * the ```npm update``` command above, might require Administrative privileges
+3. start grunt on the server, the bones themes' root folder, to generate the CSS, and to watch for changes in the LESS files during development (while making changes to the LESS files, make sure that grunt is running in the server so that LESS files are automatically compiled to CSS)
+  * ```cd <path_to_the_bones_theme>```
+  * run ```grunt``` and leave the Terminal window open
+  
+#### Submit Bugs & or Fixes:
+https://github.com/omginteractive/bones/issues
+  

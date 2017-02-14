@@ -2,22 +2,10 @@
 Stylesheet: Bare Bones complementary Main Stylesheet
 ******************************************************************/
 
-/*********************
-  SIDEBARS & ASIDES
-  *********************/
-.sidebar {
-  margin-top: 2.2em; }
+@import "bootstrap/bootstrap.less";
+@import "variables.less";
 
-.widgettitle {
-  border-bottom: 2px solid #444;
-  margin-bottom: 0.75em; }
-
-.widget {
-  padding: 0 10px;
-  margin: 2.2em 0; }
-.widget ul li {
-  margin-bottom: 0.75em;
-  /* deep nesting */ }
-.widget ul li ul {
-  margin-top: 0.75em;
-  padding-left: 1em; }
+/******************************************************************
+Components
+******************************************************************/
+@import "components/sidebar.less";

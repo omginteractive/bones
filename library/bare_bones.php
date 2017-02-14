@@ -131,30 +131,22 @@ function bare_bones_scripts_and_styles() {
 		// register main stylesheet
 		wp_register_style( 'bare-bones-stylesheet', get_stylesheet_directory_uri() . '/library/css/style.min.css', array(), '', 'all' );
 
-      // register bootstrap
-      wp_register_style('bare-bare-bones-bootstrap', get_stylesheet_directory_uri() . '/library/css/bootstrap.min.css', 'all');
 
-      // comment reply script for threaded comments
-    if ( is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) {
-		  wp_enqueue_script( 'comment-reply' );
-    }
+	    // comment reply script for threaded comments
+	    if ( is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) {
+			  wp_enqueue_script( 'comment-reply' );
+	    }
 
 		//adding scripts file in the footer
 		wp_register_script( 'bare-bones-js', get_stylesheet_directory_uri() . '/library/js/scripts.js', array( 'jquery' ), '', true );
 
 		// enqueue styles and scripts
-	wp_enqueue_script( 'bare-bones-modernizr' );
-	wp_enqueue_script( 'bare-bare-bones-bootstrap' );
-	
-	wp_enqueue_style( 'bare-bare-bones-bootstrap' );
-	wp_enqueue_style( 'bare-bones-stylesheet' );
 
-		/*
-		I recommend using a plugin to call jQuery
-		using the google cdn. That way it stays cached
-		and your site will load faster.
-		*/
+		wp_enqueue_style( 'bare-bones-stylesheet' );
+
+		wp_enqueue_script( 'bare-bones-modernizr' );
 		wp_enqueue_script( 'jquery' );
+		wp_enqueue_script( 'bare-bare-bones-bootstrap' );
 		wp_enqueue_script( 'bare-bones-js' );
 
 	}
