@@ -35,8 +35,8 @@ if ( post_password_required() ) {
 
     <?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
     	<nav class="navigation comment-navigation" role="navigation">
-      	<div class="comment-nav-prev"><?php previous_comments_link( '&larr; Previous Comments' ); ?></div>
-      	<div class="comment-nav-next"><?php next_comments_link( 'More Comments &rarr;' ); ?></div>
+            <div class="comment-nav-prev"><?php previous_comments_link( '&larr; Previous Comments' ); ?></div>
+            <div class="comment-nav-next"><?php next_comments_link( 'More Comments &rarr;' ); ?></div>
     	</nav>
     <?php endif; ?>
 
