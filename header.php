@@ -44,24 +44,35 @@
         <header class="header row" role="banner" itemscope itemtype="http://schema.org/WPHeader">
             <div id="inner-header" class="col-md-12">
                 <?php // to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> ?>
-                <p id="logo" class="h1" itemscope itemtype="http://schema.org/Organization">
+                <p id="logo" class="h1 hidden-sm hidden-xs" itemscope itemtype="http://schema.org/Organization">
                     <a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a>
                 </p>
 
-                <nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
-                    <?php wp_nav_menu(array(
-                        'container' => false,                           // remove nav container
-                        'container_class' => 'menu',                 // class of container (should you choose to use it)
-                        'menu' => 'The Main Menu',  // nav name
-                        'menu_class' => 'nav top-nav',               // adding custom nav class
-                        'theme_location' => 'main-nav',                 // where it's located in the theme
-                        'before' => '',                                 // before the menu
-                        'after' => '',                                  // after the menu
-                        'link_before' => '',                            // before each link
-                        'link_after' => '',                             // after each link
-                        'depth' => 0,                                   // limit the depth of the nav
-                        'fallback_cb' => ''                             // fallback function (if there is one)
-                    )); ?>
-                </nav>
+                <nav class="navbar navbar-default" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+					<div class="container-fluid">
+					    <div class="navbar-header">
+					      	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-header">
+						        <span class="sr-only">Toggle navigation</span>
+						        <span class="icon-bar"></span>
+						        <span class="icon-bar"></span>
+						        <span class="icon-bar"></span>
+					      	</button>
+						    <a class="navbar-brand" href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a>
+					    </div>
+						<?php 
+							wp_nav_menu( array(
+								'menu' => 'The Main Menu',
+								'theme_location' => 'main-nav',
+								'depth' => 2,
+								'container' => 'div',
+								'container_class' => 'collapse navbar-collapse nav top-nav cf',
+								'container_id' => 'navbar-collapse-header',
+								'menu_class' => 'nav navbar-nav',
+								'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
+								'walker' => new wp_bootstrap_navwalker()
+							));
+						?>
+					</div>
+				</nav>
             </div>
         </header>

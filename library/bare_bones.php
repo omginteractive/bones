@@ -19,6 +19,9 @@ URL: http://themble.com/bones/
 
 */
 
+require_once __DIR__ . '/vendor/wp-bootstrap-navwalker/wp-bootstrap-navwalker.php';
+
+
 /*********************
 WP_HEAD GOODNESS
 The default wordpress head is
@@ -206,7 +209,7 @@ function bare_bones_theme_support() {
 			'footer-links' => 'Footer Links' // secondary nav in footer
 		)
 	);
-
+	
 	// Enable support for HTML5 markup.
 	add_theme_support( 'html5', array(
 		'comment-list',

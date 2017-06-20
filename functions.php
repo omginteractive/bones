@@ -12,7 +12,8 @@ LAUNCH BONES
 Let's get everything up and running.
 *********************/
 
-function bare_bones_ahoy() {
+
+function bare_bones_setup() {
 
   //Allow editor style.
   add_editor_style( get_stylesheet_directory_uri() . '/library/css/editor-style.css' );
@@ -51,7 +52,7 @@ function bare_bones_ahoy() {
 } /* end bones ahoy */
 
 // let's get this party started
-add_action( 'after_setup_theme', 'bare_bones_ahoy' );
+add_action( 'after_setup_theme', 'bare_bones_setup' );
 
 
 /************* OEMBED SIZE OPTIONS *************/

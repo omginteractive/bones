@@ -1,20 +1,30 @@
         <footer class="footer row" role="contentinfo" itemscope itemtype="http://schema.org/WPFooter">
             <div id="inner-footer" class="col-md-12">
-                <nav role="navigation">
-                    <?php wp_nav_menu(array(
-                        'container' => 'div',                           // enter '' to remove nav container (just make sure .footer-links in _base.scss isn't wrapping)
-                        'container_class' => 'footer-links',         // class of container (should you choose to use it)
-                        'menu' => 'Footer Links',   // nav name
-                        'menu_class' => 'nav footer-nav',            // adding custom nav class
-                        'theme_location' => 'footer-links',             // where it's located in the theme
-                        'before' => '',                                 // before the menu
-                        'after' => '',                                  // after the menu
-                        'link_before' => '',                            // before each link
-                        'link_after' => '',                             // after each link
-                        'depth' => 0,                                   // limit the depth of the nav
-                        'fallback_cb' => 'bones_footer_links_fallback'  // fallback function
-                    )); ?>
-                </nav>
+                <nav class="navbar navbar-default" role="navigation">
+						<div class="container-fluid">
+						    <div class="navbar-header">
+						      	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-footer">
+							        <span class="sr-only">Toggle navigation</span>
+							        <span class="icon-bar"></span>
+							        <span class="icon-bar"></span>
+							        <span class="icon-bar"></span>
+						      	</button>
+						    </div>
+							<?php 
+								wp_nav_menu( array(
+									'menu' => 'Footer Links',
+									'theme_location' => 'footer-links',
+									'depth' => 2,
+									'container' => 'div',
+									'container_class' => 'collapse navbar-collapse footer-links cf',
+									'container_id' => 'navbar-collapse-footer',
+									'menu_class' => 'nav navbar-nav',
+									'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
+									'walker' => new wp_bootstrap_navwalker()
+								));
+							?>
+						</div>
+					</nav>
 
                 <p class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>.</p>
             </div>
