@@ -14,7 +14,7 @@
 								wp_nav_menu( array(
 									'menu' => 'Footer Links',
 									'theme_location' => 'footer-links',
-									'depth' => 2,
+									'depth' => 1,
 									'container' => 'div',
 									'container_class' => 'collapse navbar-collapse footer-links cf',
 									'container_id' => 'navbar-collapse-footer',

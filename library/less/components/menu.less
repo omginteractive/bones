@@ -1,0 +1,29 @@
+.dropdown:hover { 
+	> .dropdown-menu {
+		display: block;
+	}
+	
+}
+.dropdown {
+	.dropdown:after {
+		content: '';
+	    border-bottom: 4px solid transparent;
+	    border-top: 4px solid transparent;
+	    border-left: 4px solid;
+	    height: 0;
+	    opacity: 0.3;
+	    vertical-align: top;
+	    width: 0;
+	    position: absolute;
+	    top: 50%;
+	    right: 10px;
+	    transform: translateY(-50%);
+	}
+	.dropdown-menu {
+		.dropdown-menu {
+			position: absolute;
+			top: 0;
+		    left: 100%;
+		}
+	}	
+}
