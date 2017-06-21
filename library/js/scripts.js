@@ -115,6 +115,5 @@ jQuery(document).ready(function($) {
    * You can remove this if you don't need it
   */
   loadGravatars();
-
-
+  
 }); /* end of as page load scripts */

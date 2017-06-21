@@ -127,30 +127,25 @@ function bare_bones_scripts_and_styles() {
 
   if (!is_admin()) {
 
-		// modernizr (without media query polyfill)
-		wp_register_script( 'bare-bones-modernizr', get_stylesheet_directory_uri() . '/library/js/libs/modernizr.custom.min.js', array(), '2.5.3', false );
-		wp_register_script( 'bare-bare-bones-bootstrap', get_stylesheet_directory_uri() . '/library/js/libs/bootstrap.min.js', array('jquery'), '3.3.7', false );
-
-		// register main stylesheet
-		wp_register_style( 'bare-bones-stylesheet', get_stylesheet_directory_uri() . '/library/css/style.min.css', array(), '', 'all' );
-
-
 	    // comment reply script for threaded comments
 	    if ( is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) {
 			  wp_enqueue_script( 'comment-reply' );
 	    }
 
-		//adding scripts file in the footer
-		wp_register_script( 'bare-bones-js', get_stylesheet_directory_uri() . '/library/js/scripts.js', array( 'jquery' ), '', true );
 
 		// enqueue styles and scripts
 
-		wp_enqueue_style( 'bare-bones-stylesheet' );
+		// enqueuemain stylesheet
+		wp_enqueue_style( 'bare-bones-stylesheet', get_stylesheet_directory_uri() . '/library/css/style.min.css', array(), '', 'all');
 
-		wp_enqueue_script( 'bare-bones-modernizr' );
+		// modernizr (without media query polyfill)
+		wp_enqueue_script( 'bare-bones-modernizr', get_stylesheet_directory_uri() . '/library/js/libs/modernizr.custom.min.js', array(), '2.5.3', false );
 		wp_enqueue_script( 'jquery' );
-		wp_enqueue_script( 'bare-bare-bones-bootstrap' );
-		wp_enqueue_script( 'bare-bones-js' );
+		wp_enqueue_script( 'bare-bones-bootstrap', get_stylesheet_directory_uri() . '/library/js/libs/bootstrap.min.js', array('jquery'), '3.3.7', false );
+		wp_enqueue_script('bare-bones-wp-bootstrap-navwalker', get_stylesheet_directory_uri() . '/library/vendor/wp-bootstrap-navwalker/wp-bootstrap-navwalker.js', array('jquery'), '2.0.6');
+
+		//adding scripts file in the footer
+		wp_enqueue_script( 'bare-bones-js', get_stylesheet_directory_uri() . '/library/js/scripts.js', array( 'jquery' ), '', true );
 
 	}
 }
