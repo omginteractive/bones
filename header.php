@@ -44,7 +44,7 @@
         <header class="header row" role="banner" itemscope itemtype="http://schema.org/WPHeader">
             <div id="inner-header" class="col-md-12">
                 <?php // to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> ?>
-                <p id="logo" class="h1 hidden-sm hidden-xs" itemscope itemtype="http://schema.org/Organization">
+                <p id="logo" class="h1 hidden-xs" itemscope itemtype="http://schema.org/Organization">
                     <a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a>
                 </p>
 
@@ -57,7 +57,7 @@
 						        <span class="icon-bar"></span>
 						        <span class="icon-bar"></span>
 					      	</button>
-						    <a class="navbar-brand" href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a>
+						    <a class="navbar-brand hidden-sm hidden-md hidden-lg" href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a>
 					    </div>
 						<?php 
 							wp_nav_menu( array(
