@@ -13,12 +13,13 @@
   },
   "homepage": "https://github.com/omginteractive/bones#readme",
   "devDependencies": {
-    "grunt": "^1.0.1",
-    "grunt-autoprefixer": "^3.0.4",
-    "grunt-cli": "^1.2.0",
-    "grunt-contrib-cssmin": "^1.0.2",
-    "grunt-contrib-less": "^1.4.0",
-    "grunt-contrib-watch": "^1.0.0",
-    "grunt-postcss": "^0.8.0"
-  }
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.1",
+    "gulp-watch-sass": "^1.2.4"
+  },
+  "main": "index.js",
+  "repository": "git@github.com:omginteractive/bones.git",
+  "dependencies": {}
 }

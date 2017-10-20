@@ -1,0 +1,17 @@
+/******************************************************************
+Stylesheet: Bare Bones complementary Main Stylesheet
+******************************************************************/
+
+// Bootstrap from Twitter
+@import "bootstrap/bootstrap.scss";
+
+// Add your LESS variables or override existing Bootstrap LESS variables in this file
+@import "variables.scss";
+
+/******************************************************************
+Components
+******************************************************************/
+@import "components/sidebar.scss";
+@import "components/menu.scss";
+
+// TODO: add new .scss files under the /components folder and import those here

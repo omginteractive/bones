@@ -136,12 +136,12 @@ function bare_bones_scripts_and_styles() {
 		// enqueue styles and scripts
 
 		// enqueuemain stylesheet
-		wp_enqueue_style( 'bare-bones-stylesheet', get_stylesheet_directory_uri() . '/library/css/style.min.css', array(), '', 'all');
+		wp_enqueue_style( 'bare-bones-stylesheet', get_stylesheet_directory_uri() . '/library/css/style.css', array(), '', 'all');
 
 		// modernizr (without media query polyfill)
 		wp_enqueue_script( 'bare-bones-modernizr', get_stylesheet_directory_uri() . '/library/js/libs/modernizr.custom.min.js', array(), '2.5.3', false );
-		wp_enqueue_script( 'jquery' );
-		wp_enqueue_script( 'bare-bones-bootstrap', get_stylesheet_directory_uri() . '/library/js/libs/bootstrap.min.js', array('jquery'), '3.3.7', false );
+		wp_enqueue_script( 'bare-bones-tether', get_stylesheet_directory_uri() . '/library/js/libs/tether.min.js', array('jquery'), '1.4.0', false );
+		wp_enqueue_script( 'bare-bones-bootstrap', get_stylesheet_directory_uri() . '/library/js/libs/bootstrap.min.js', array('jquery'), '4.0.0-beta.2', false );
 		wp_enqueue_script('bare-bones-wp-bootstrap-navwalker', get_stylesheet_directory_uri() . '/library/vendor/wp-bootstrap-navwalker/wp-bootstrap-navwalker.js', array('jquery'), '2.0.6');
 
 		//adding scripts file in the footer
